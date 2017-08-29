@@ -1,6 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import ReactBanner from '../react/components/ReactBanner.jsx';
+import Arcgis from '../react/components/Arcgis.jsx';
 import http from './services/http';
 
 require("../sass/main.scss");
@@ -18,7 +18,7 @@ export class View {
   addListeners() {}
 
   init() {
-    ReactDOM.render(<ReactBanner />, document.getElementById('react-example'));
+    ReactDOM.render(<Arcgis />, document.getElementById('react'));
 
   }
 

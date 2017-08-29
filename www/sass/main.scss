@@ -2,28 +2,32 @@
 // Mobile First
 #view-main {
   background-color: $color-blue;
+  #react {
+    margin: 0px;
+    padding: 0px;
+    border: solid 2px rgb(255, 255, 255);
+  }
 }
 
 // Responsive
 @supports (display: grid) {
   #view-main {
     #grid-example {
-      display: grid;
-      grid-template-columns: 1fr 300px 200px;
-      grid-gap: 20px;
-      margin: 0 auto;
-      padding: 10px;
-      border: solid 2px rgb(255, 255, 255);
-      width: 100%;
-      max-width: 1280px;
+      // display: grid;
+      // grid-template-columns: 1fr 300px 200px;
+      // grid-gap: 20px;
+      // margin: 0 auto;
+      // padding: 10px;
+      // width: 100%;
+      // max-width: 1280px;
     }
-    .fractional-grid-example {
-      display: grid;
-      grid-template-columns: 1fr 2fr 1fr;
-      grid-auto-rows: 50px;
-      grid-gap: 20px;
-      width: 100%;
-    }
+    // .fractional-grid-example {
+    //   display: grid;
+    //   grid-template-columns: 1fr 2fr 1fr;
+    //   grid-auto-rows: 50px;
+    //   grid-gap: 20px;
+    //   width: 100%;
+    // }
     @media (max-width: 1024px) {
       #grid-example {
         grid-template-columns: 1fr 1fr;
