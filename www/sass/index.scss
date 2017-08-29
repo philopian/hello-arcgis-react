@@ -1,0 +1,34 @@
+@import 'globals';
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: $color-white;
+}
+
+#appseed-logo {
+  height: 100px;
+  margin-bottom: 0px !important;
+}
+
+#nav-bar {
+  text-align: center;
+}
+
+h1 {
+  color: $color-white;
+  font-size: 2em;
+  text-align: center;
+  padding-top: 14px;
+}
+
+#view {
+  width: 100%;
+  min-height: 700px;
+  border: 4px solid $color-white;
+}
+
+.view {
+  width: 100%;
+  min-height: 700px;
+}
