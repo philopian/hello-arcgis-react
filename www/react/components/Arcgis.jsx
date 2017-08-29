@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Map, Widgets } from 'react-arcgis';
+import { Map, Widgets, Layers, Graphic, Symbols, Geometry, Popup  } from 'react-arcgis';
 
 // Styles
 const Container = styled.div`
@@ -17,10 +17,10 @@ const MapView = styled(Map)`
 `;
 
 
-
+// Widgets
 const SearchWidget = Widgets.Search;
 const BasemapGallery = Widgets.BasemapGallery;
-
+const Locate = Widgets.Locate;
 
 
 // React Component
@@ -28,16 +28,20 @@ export default class Sample extends React.Component {
   constructor(props, context) {
     super(props, context);
 
-    // Its more performate to bind your methods in the constructor
-    this.myCustomMethod = this.myCustomMethod.bind(this);
-
     // Get store state
     // Subscribe to the store and update state
+    this.state = {
+        viewProperties: {
+          center: [-122.4443, 45.2529],
+        }
+    };
+
+    // Its more performate to bind your methods in the constructor
+    this.mapClick = this.mapClick.bind(this);
   }
 
-  // Custom method
-  myCustomMethod() {
-    console.log('. you clicked me');
+  mapClick() {
+    console.log('... you just clicked the map!');
     // store.dispatch({
     //   type: 'UPDATE_SOMETHING',
     //   payload: Date(),
@@ -49,13 +53,18 @@ export default class Sample extends React.Component {
       <Container>
         <MapView 
             mapProperties={{ basemap: 'satellite' }}
-            viewProperties={{
-              center: [-122.4443, 45.2529],
-              zoom: 6
+            viewProperties={this.state.viewProperties}
+            onLoad={this.handleMapLoad}
+            onDrag={(e) => { 
+              console.log('...map dragged');
             }}
+            onMouseWheel={(e) => { 
+              e.stopPropagation(); // disable mouse wheel
+            }}
+            onClick={this.mapClick}
         >
             <SearchWidget position="top-right" />
-            <BasemapGallery position="bottom-right" />
+            <Locate position="top-left" />
         </MapView>
 
       </Container>);
