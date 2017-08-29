@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Map } from 'react-arcgis';
+import { Map, Widgets } from 'react-arcgis';
 
 // Styles
 const Container = styled.div`
@@ -16,6 +16,13 @@ const MapView = styled(Map)`
   height: 400px;
 `;
 
+
+
+const SearchWidget = Widgets.Search;
+const BasemapGallery = Widgets.BasemapGallery;
+
+
+
 // React Component
 export default class Sample extends React.Component {
   constructor(props, context) {
@@ -27,33 +34,6 @@ export default class Sample extends React.Component {
     // Get store state
     // Subscribe to the store and update state
   }
-
-/*
-  // React Methods
-  componentWillMount() {
-    console.log('componentWillMount');
-  }
-  componentDidMount() {
-    console.log('componentDidMount');
-  }
-  componentWillReceiveProps() {
-    console.log('componentWillReceiveProps');
-  }
-  shouldComponentUpdate() {
-    console.log('shouldComponentUpdate');
-    return true;
-  }
-  componentWillUpdate() {
-    console.log('componentWillUpdate');
-  }
-  componentDidUpdate() {
-    console.log('componentDidUpdate');
-  }
-  componentWillUnmount() {
-    console.log('componentWillUnmount');
-  }
-*/
-
 
   // Custom method
   myCustomMethod() {
@@ -67,13 +47,17 @@ export default class Sample extends React.Component {
   render() {
     return (
       <Container>
-       <MapView 
-          mapProperties={{ basemap: 'satellite' }}
-          viewProperties={{
-            center: [-122.4443, 45.2529],
-            zoom: 6
-          }}
-       />
+        <MapView 
+            mapProperties={{ basemap: 'satellite' }}
+            viewProperties={{
+              center: [-122.4443, 45.2529],
+              zoom: 6
+            }}
+        >
+            <SearchWidget position="top-right" />
+            <BasemapGallery position="bottom-right" />
+        </MapView>
+
       </Container>);
   }
 }
