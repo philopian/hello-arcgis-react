@@ -1,0 +1,66 @@
+@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);@import url(http://fonts.googleapis.com/css?family=Roboto:300,400,500);#view-main {
+  background-color: #1779ba; }
+  #view-main #react {
+    margin: 0px;
+    padding: 0px;
+    border: solid 2px white; }
+
+@supports ((display: -ms-grid) or (display: grid)) {
+  @media (max-width: 1024px) {
+    #view-main #grid-example {
+      -ms-grid-columns: 1fr 1fr;
+          grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 720px) {
+    #view-main #grid-example {
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr; } }
+  @media (max-width: 320px) {
+    #view-main #grid-example {
+      -ms-grid-columns: 1fr;
+          grid-template-columns: 1fr; } } }
+#view-1 {
+  background-color: #1779ba; }
+#view-2 {
+  background-color: #12151F; }
+#view-leaflet {
+  background-color: #0493E9; }
+  #view-leaflet #map {
+    border: solid 2px #C59C47;
+    height: 400px; }
+  #view-leaflet .leaflet-popup-content-wrapper {
+    border-radius: 4px; }
+#redux-example {
+  background-color: #1779ba;
+  height: 100%;
+  width: 100%; }
+  #redux-example h1 {
+    color: darkcyan; }
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: white; }
+
+#appseed-logo {
+  height: 100px;
+  margin-bottom: 0px !important; }
+
+#nav-bar {
+  text-align: center; }
+
+h1 {
+  color: white;
+  font-size: 2em;
+  text-align: center;
+  padding-top: 14px; }
+
+#view {
+  width: 100%;
+  min-height: 700px;
+  border: 4px solid white; }
+
+.view {
+  width: 100%;
+  min-height: 700px; }
+
+/*# sourceMappingURL=app.css.map*/
